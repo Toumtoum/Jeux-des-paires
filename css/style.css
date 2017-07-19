@@ -1,0 +1,9 @@
+.carte{
+  width:140px;
+  height:200px;
+  margin:10px;
+  float:left;
+  border-radius: 20px;
+  background-image: url("../img/face.png");
+  background-color: #5d8aa8;
+}
