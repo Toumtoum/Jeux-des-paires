@@ -4,5 +4,10 @@
   margin:10px;
   float:left;
   border-radius: 20px;
+<<<<<<< HEAD
   /*background-image: url("../img/face.png");*/
+=======
+  background-image: url("../img/face.png");
+  background-color: green;
+>>>>>>> parent of 0d175d7... commiting before change to resolve issue with background image not visible after compare function
 }
