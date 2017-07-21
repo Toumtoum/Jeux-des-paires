@@ -61,7 +61,7 @@ function revealBackSide (){
       // }
       if (click == 2) {
 
-        compare ();
+        setTimeout(compare,2000);
 
       }
         console.log(compareColor[0]);
@@ -81,18 +81,17 @@ for (var i = 0; i < compareColor.length ; i++){
 
   if (compareColor[0].style.backgroundColor != compareColor[1].style.backgroundColor){
 
-    compareColor[0].style.backgroundImage = 'url("../img/face.png")';
-    compareColor[1].style.backgroundImage = 'url("../img/face.png")';
+    compareColor[0].style.backgroundImage = 'url("img/face.png")';
+    compareColor[1].style.backgroundImage = 'url("img/face.png")';
     compareColor = [];
     click = 0;
-    alert('dommage');
   }
 
   else {
 
     compareColor = [];
     click = 0;
-    alert('WOOHOO')
+    alert('WOOHOO');
 
   }
 
