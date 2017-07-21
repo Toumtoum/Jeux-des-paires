@@ -38,14 +38,14 @@ function assignColor (){
 
 }
 
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@ GIVE IMG TO BACK CARD @@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@ GIVE IMG TO BACK CARDS @@@@@@@@@@@@@@@@@@@@@@@@@
 
 
 function assignBackImg (){
 
   for (var i = 0; i < backImage.length; i++) {
 
-    backImage[i].style.backgroundImage = '../img/face.png';
+    backImage[i].style.backgroundImage = 'url("img/face.png")';
 
   }
 
@@ -118,6 +118,7 @@ for (var i = 0; i < compareColor.length ; i++){
 //----------------------------Script----------------------------------------
 
 schuffle (colors);
-assignColor ();
 assignBackImg ();
+assignColor ();
+
 revealBackSide ();
