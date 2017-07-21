@@ -4,32 +4,13 @@ var card = document.getElementsByClassName('carte');
 
 var colors = ['#5d8aa8','#d2691e','#efdecd','#9966cc','#008000','#00ffff','#4b5320','#5d8aa8','#d2691e','#efdecd','#9966cc','#008000','#00ffff','#4b5320']
 
-var randomColor;
+var compareColor = [];
+
+var click = 0;
 
 //----------------------------Fonctions----------------------------------------
 
-function revealBackSide (){
-
-for (var i = 0; i < card.length ; i++){
-
-  card[i].onclick = function(){
-
-    this.style.backgroundImage = 'url()';
-
-  };
-}
-}
-
-// function assignRandomColors () {
-//
-//   randomColor = colors[Math.floor(Math.random() * colors.length)];
-//
-//   for (var i = 0; i < randomColor.length ; i++){
-//
-//     card[i].style.backgroundColor = randomColor[i];
-//
-//   };
-// }
+// @@@@@@@@@@@@@@@@@@@@@@@ GIVE A RANDOM COLOR TO EACH CARD @@@@@@@@@@@@@@@@@@@@@@@@
 
  function schuffle (array){
 
@@ -55,12 +36,77 @@ function assignColor (){
 
 }
 
+// @@@@@@@@@@@@@@@@@@@@@@@@@ SHOW THE BACKGROUND COLOR @@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+function revealBackSide (){
+
+
+
+  for (var i = 0; i < card.length ; i++){
+
+
+    card[i].onclick = function(){
+
+      if (click < 2){
+      this.style.backgroundImage = 'url()';
+      compareColor.push (this);
+      click++;
+      }
+      // else if (click == 1){
+      // this.style.backgroundImage = 'url()';
+      // compareColor.push (this);
+      // click++;
+      //
+      // }
+      if (click == 2) {
+
+        compare ();
+
+
+      }
+        console.log(compareColor[0]);
+        console.log(compareColor[1]);
+        console.log(click);
+    };
+
+  }
+}
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@ COMPARE TWO CARD @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+function compare (){
+
+
+for (var i = 0; i < compareColor.length ; i++){
+
+
+  if (compareColor[0].style.backgroundColor != compareColor[1].style.backgroundColor){
+
+    compareColor[0].style.backgroundImage = 'url("../img/face.png")';
+    compareColor[1].style.backgroundImage = 'url("../img/face.png")';
+    compareColor = [];
+    click = 0;
+    alert('dommage');
+  }
+
+  else {
+
+
+    compareColor = [];
+    click = 0;
+    alert('WOOHOO')
+
+  }
+
+}
+
+}
 
 
 
 
 //----------------------------Script----------------------------------------
 
-revealBackSide ();
 schuffle (colors);
 assignColor ();
+revealBackSide ();
