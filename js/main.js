@@ -2,6 +2,8 @@
 
 var card = document.getElementsByClassName('carte');
 
+var face = document.getElementsByClassName('color');
+
 var colors = ['#5d8aa8','#d2691e','#efdecd','#9966cc','#008000','#00ffff','#4b5320','#5d8aa8','#d2691e','#efdecd','#9966cc','#008000','#00ffff','#4b5320']
 
 var compareColor = [];
@@ -32,10 +34,21 @@ function assignColor (){
 
     card[i].style.backgroundColor = colors[i];
 
+
   }
 
 }
 
+function assignBackimage (){
+
+  for (var i = 0; i < face.length; i++) {
+
+    face[i].style.backgroundImage = '../img/face.png';
+
+
+  }
+
+}
 // @@@@@@@@@@@@@@@@@@@@@@@@@ SHOW THE BACKGROUND COLOR @@@@@@@@@@@@@@@@@@@@@@@@@@
 
 
@@ -62,7 +75,6 @@ function revealBackSide (){
       if (click == 2) {
 
         compare ();
-
 
       }
         console.log(compareColor[0]);
@@ -91,7 +103,6 @@ for (var i = 0; i < compareColor.length ; i++){
 
   else {
 
-
     compareColor = [];
     click = 0;
     alert('WOOHOO')
@@ -109,4 +120,5 @@ for (var i = 0; i < compareColor.length ; i++){
 
 schuffle (colors);
 assignColor ();
+assignBackimage ();
 revealBackSide ();
