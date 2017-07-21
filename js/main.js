@@ -41,9 +41,7 @@ function assignColor (){
 
 function revealBackSide (){
 
-
-
-  for (var i = 0; i < card.length ; i++){
+for (var i = 0; i < card.length ; i++){
 
 
     card[i].onclick = function(){
@@ -61,7 +59,7 @@ function revealBackSide (){
       // }
       if (click == 2) {
 
-        setTimeout(compare,2000);
+        compare();
 
       }
         console.log(compareColor[0]);
@@ -78,6 +76,7 @@ function compare (){
 
 for (var i = 0; i < compareColor.length ; i++){
 
+setTimeout(function(){
 
   if (compareColor[0].style.backgroundColor != compareColor[1].style.backgroundColor){
 
@@ -87,11 +86,12 @@ for (var i = 0; i < compareColor.length ; i++){
     click = 0;
   }
 
-  else {
+},800);
+
+  if (compareColor[0].style.backgroundColor == compareColor[1].style.backgroundColor) {
 
     compareColor = [];
     click = 0;
-    alert('WOOHOO');
 
   }
 
